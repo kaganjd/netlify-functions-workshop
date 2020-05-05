@@ -12,5 +12,4 @@ exports.handler = async (event, context) => {
       message: `hello ${process.env.GOOGLE_APPLICATION_CREDENTIALS}`
     }),
   }
-  return callback(null, response)
 }
