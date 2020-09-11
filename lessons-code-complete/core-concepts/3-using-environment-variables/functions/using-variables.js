@@ -15,9 +15,9 @@ const html = (env, headers) => {
 
 exports.handler = async function(event, context) {
   try {
-    // const body = await html(
-    //   process.env.GOOGLE_APPLICATION_CREDENTIALS
-    // );
+    const body = await html(
+      process.env.GOOGLE_APPLICATION_CREDENTIALS
+    );
     return { 
       headers: {
         /* Required for CORS support to work */
@@ -26,8 +26,7 @@ exports.handler = async function(event, context) {
         "Access-Control-Allow-Credentials" : true
       },
       statusCode: 200, 
-      body: JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS).private_key.replace(/\\n/g, '\n')
-      };
+      body };
   } catch (err) {
     return { statusCode: 500, body: err.toString() };
   }
