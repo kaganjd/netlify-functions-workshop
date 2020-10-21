@@ -1,2 +1,6 @@
 [build]
+  command = "go get ./functions/... && go build -o functions/parse ./functions/parse.go"
   publish = "site"
+  functions = "functions"
+[build.environment]
+    GO_IMPORT_PATH="github.com/kaganjd/netlify-functions-workshop"
